@@ -11,7 +11,7 @@
         <p>Operation by: {{ tikcers[i][2] }}</p>
         <p>When: {{ tikcers[i][3] }}</p>
         <p>Closed: {{ tikcers[i][5] }}$</p>
-    <a href="{{ url_for('ticker', ticker_id=i) }}">View Graph</a>
+    <a href="{{ url_for('user_bp.ticker', ticker_id=i) }}">View Graph</a>
     </div>
 {% endfor %}
     </div>
