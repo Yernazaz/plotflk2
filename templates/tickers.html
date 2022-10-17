@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Tickers {% endblock %}</h1>
+    <div class="content">
+        {% for i in range (0, len) %}
+    <div class="student">
+        <p>ID: {{ i }}</p>
+        <p>Ticker: {{ tikcers[i][0] }}</p>
+        <p>Company: {{ tikcers[i][1] }}</p>
+        <p>Operation by: {{ tikcers[i][2] }}</p>
+        <p>When: {{ tikcers[i][3] }}</p>
+        <p>Closed: {{ tikcers[i][5] }}$</p>
+    <a href="{{ url_for('ticker', ticker_id=i) }}">View Graph</a>
+    </div>
+{% endfor %}
+    </div>
+{% endblock %}
