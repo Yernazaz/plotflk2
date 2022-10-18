@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Tickers {% endblock %}</h1>
+    <div class="content">
+
+<input type="text" name="example" id="example" list="lemmas">
+<datalist id="lemmas">
+    {% for i in range (0, len) %}
+   <option value="/{{ i }}/ticker_list/">{{ tikcers[i][0] }}</option>
+    {% endfor %}
+</datalist>
+    </div>
+    <img src="{{ image }}" alt="myplot"/>
+    <div class="student">
+        <p>Ticker: {{ ticker_info[0] }}</p>
+        <p>Company: {{ ticker_info[1] }}</p>
+        <p>Operation by: {{ ticker_info[2] }}</p>
+        <p>When: {{ ticker_info[3] }}</p>
+        <p>Closed: {{ ticker_info[4] }}$</p>
+    </div>
+    <script>
+    example.oninput = function () {
+   window.location.href = this.value;
+}
+    </script>
+{% endblock %}
